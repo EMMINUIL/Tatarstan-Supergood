@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <title>Корабль</title>
+</head>
+<body>
+
+
+<div class="photo">
+
+</div>
+<br>
+{% if FIR > 310 %}
+    <div class="fire">Обнаружен пожар!</div>
+{% endif %}
+{% if eco2new > 5000 %}
+    <div class="indicator" id ="danger">Уровень углекислого газа = {{eco2new}}ppm (критический!)</div>
+{% elif eco2new > 2500 %}
+    <div class="indicator" id ="danger1">Уровень углекислого газа = {{eco2new}}ppm (опасный!)</div>
+{% elif eco2new > 10000 %}
+    <div class="indicator" id ="danger2">Уровень углекислого газа = {{eco2new}}ppm (смертелный!)</div>
+{% else %}
+    <div class="indicator">Уровень углекислого газа = {{eco2new}}ppm (нормальный)</div>
+{% endif %}
+{% if WaterLVLnew > 10 %}
+    <div class="indicator" id ="danger3">Уровень воды = {{WaterLVLnew}}% (возможно пробоина, затопление!)</div>
+{% elif WaterLVLnew > 15 %}
+    <div class="indicator" id ="danger4">Уровень воды = {{WaterLVLnew}}% (критический уровень!)</div>
+{% elif WaterLVLnew > 20 %}
+    <div class="indicator" id ="danger5">Уровень воды = {{WaterLVLnew}}% (корабль потоплен!)</div>
+{% else %}
+    <div class="indicator">Уровень воды = {{WaterLVLnew}}% (нормальный)</div>
+{% endif %}
+{% if HUMnew > 60 %}
+    <div class="indicator" id ="danger6">Уровень влажности = {{HUMnew}}% (повышенный!)</div>
+{% elif HUMnew > 80 %}
+    <div class="indicator" id ="danger7">Уровень влажности = {{HUMnew}}% (критический!)</div>
+{% elif HUMnew > 100 %}
+    <div class="indicator" id ="danger8">Уровень влажности = {{HUMnew}}% (вероятней всего корабль потоплен!)</div>
+{% elif HUMnew < 30 %}
+    <div class="indicator" id ="danger9" >Уровень влажности = {{HUMnew}}% (пониженный!)</div>
+{% elif HUMnew < 10 %}
+    <div class="indicator" id ="danger10">Уровень влажности = {{HUMnew}}% (критический для людей!)</div>
+{% else %}
+    <div class="indicator">Уровень влажности = {{HUMnew}}% (нормальный)</div>
+{% endif %}
+{% if TEMPnew > 30 %}
+    <div class="indicator" id ="danger11">Температура = {{TEMPnew}}° (повышенная!)</div>
+{% elif TEMPnew > 50 %}
+    <div class="indicator" id ="danger12">Температура = {{TEMPnew}}° (опасная!)</div>
+{% elif TEMPnew > 100 %}
+    <div class="indicator" id ="danger13">Температура = {{TEMPnew}}° (критическая,возможно пожар!)</div>
+{% elif TEMPnew < 2 %}
+    <div class="indicator" id ="danger18">Температура = {{TEMPnew}}° (Ниже нуля!)</div>
+{% elif TEMPnew < 20 %}
+    <div class="indicator" id ="danger19">Температура = {{TEMPnew}}° (критическая!)</div>
+
+{% else %}
+    <div class="indicator">Температура = {{TEMPnew}}° (нормальная)</div>
+
+{% endif %}
+{% if Pressnew > 785 %}
+    <div class="indicator" id ="danger14">Давление = {{Pressnew}}мм р.ст. (повышенное, возможно антициклон!)</div>
+{% elif Pressnew < 735 %}
+    <div class="indicator" id ="danger15">Давление = {{Pressnew}}мм р.ст. (пониженное!)</div>
+{% elif Pressnew > 900 %}
+    <div class="indicator" id ="danger16">Давление = {{Pressnew}}мм р.ст. (проверьте исправность датчика!)</div>
+{% elif Pressnew < 635 %}
+    <div class="indicator" id ="danger17">Давление = {{Pressnew}}мм р.ст. (проверьте исправность датчика!)</div>
+
+{% else %}
+    <div class="indicator">Давление = {{Pressnew}}мм р.ст. (нормальная)</div>
+{% endif %}
+<script>
+setInterval(function() {
+  // Refresh the page every 5 seconds
+  location.reload();
+}, 5000);
+</script>
+
+
+</body>
+</html>

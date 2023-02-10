@@ -1,0 +1,99 @@
+body{
+
+
+text-align: center;
+}
+.photo{
+background-image: url("https://www.ros-voir.ru/uploads/uploader/files/5e/6a/21/5e6a2147aa9f6_e7caf35705247ed8f0df10aaf57a51db.jpg");
+height: 200px;
+background-position: center;
+}
+
+
+.fire{
+background-color: red;
+color: white;
+font-size: 27px;
+padding: 10px;
+width: 300px;
+border-radius: 20px;
+margin: 0 auto;
+margin-top: 30px;
+
+}
+
+.indicator{
+
+background-color: black;
+color: white;
+font-size: 27px;
+padding: 10px;
+width: 300px;
+border-radius: 20px;
+margin: 0 auto;
+margin-top: 30px;
+}
+
+#danger{
+background-color: #ff0d00;
+}
+#danger1{
+background-color: #8B0000;
+}
+#danger2{
+background-color: #ff0d00;
+}
+#danger3{
+background-color: #8B0000;
+}
+#danger4{
+background-color: #ff0d00;
+}
+#danger5{
+background-color: ff0d00;
+}
+#danger6{
+background-color: #8B0000;
+}
+#danger7{
+background-color: #ff0d00;
+}
+#danger8{
+background-color: #8B0000;
+}
+#danger9{
+background-color: #8B0000;
+}
+#danger10{
+background-color: #ff0d00;
+}
+#danger11{
+background-color: #ff0d00;
+}
+#danger12{
+background-color: #8B0000;
+}
+#danger13{
+background-color: #8B0000;
+}
+#danger14{
+background-color: #8B0000;
+}
+#danger15{
+background-color: #8B0000;
+}
+#danger16{
+background-color: #ff0d00;
+}
+#danger17{
+background-color: #ff0d00;
+}
+#danger18{
+background-color: #8B0000;
+}
+
+#danger19{
+background-color: #ff0d00;
+}
+
+
